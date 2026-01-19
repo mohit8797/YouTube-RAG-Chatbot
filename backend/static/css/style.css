@@ -1,0 +1,188 @@
+/* body {
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    text-align: center;
+    margin-top: 120px;
+}
+
+input {
+    padding: 12px;
+    width: 320px;
+    border-radius: 6px;
+    border: none;
+    margin: 10px;
+}
+
+button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 6px;
+    background: #38bdf8;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #0ea5e9;
+}
+
+.chat-container {
+    display: flex;
+    height: 100vh;
+}
+
+.video-box {
+    width: 50%;
+    background: black;
+}
+
+.video-box iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.chat-box {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background: #020617;
+}
+
+.messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.msg-user {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.msg-bot {
+    text-align: left;
+    margin-bottom: 10px;
+    color: #38bdf8;
+}
+
+.input-row {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #1e293b;
+}
+
+.input-row input {
+    flex: 1;
+} */
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #0f172a;
+    color: white;
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* VIDEO */
+
+.video-panel {
+    flex: 2;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-panel iframe {
+    width: 95%;
+    height: 95%;
+    border-radius: 10px;
+}
+
+/* CHAT */
+
+.chat-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #020617;
+    border-left: 1px solid #1e293b;
+}
+
+.chat-header {
+    padding: 15px;
+    background: #020617;
+    border-bottom: 1px solid #1e293b;
+    font-weight: bold;
+    text-align: center;
+}
+
+.messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+/* CHAT BUBBLES */
+
+.message {
+    max-width: 80%;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    line-height: 1.4;
+}
+
+.user {
+    background: #2563eb;
+    align-self: flex-end;
+}
+
+.bot {
+    background: #1e293b;
+    align-self: flex-start;
+}
+
+/* INPUT */
+
+.input-row {
+    display: flex;
+    padding: 12px;
+    border-top: 1px solid #1e293b;
+}
+
+.input-row input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.input-row button {
+    margin-left: 10px;
+    padding: 10px 16px;
+    background: #22c55e;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.input-row button:hover {
+    background: #16a34a;
+}

@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+google-generativeai
+sentence-transformers
+faiss-cpu
+youtube-transcript-api
+python-dotenv

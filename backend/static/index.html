@@ -1,0 +1,81 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>YouTube RAG Chatbot</title>
+    <link rel="stylesheet" href="static/css/style.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>YouTube Video Chatbot 🤖</h1>
+
+        <input id="videoUrl" type="text" placeholder="Paste YouTube link here" />
+
+        <button id="processBtn">Process Video</button>
+
+        <p id="status"></p>
+    </div>
+
+    <script src="static/js/script.js"></script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>YouTube RAG Chatbot</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+
+<body style="display:flex;align-items:center;justify-content:center;height:100vh;">
+
+    <div class="container" style="text-align:center;">
+
+        <h1>🎥 Chat With Any YouTube Video</h1>
+
+        <input id="videoUrl" type="text" placeholder="Paste YouTube link here"
+            style="padding:12px;width:300px;border-radius:8px;border:none;" />
+
+        <br><br>
+
+        <button id="processBtn">Process Video</button>
+
+        <p id="status"></p>
+
+    </div>
+
+    <script>
+        const btn = document.getElementById("processBtn");
+        const status = document.getElementById("status");
+
+        btn.onclick = async () => {
+            const url = document.getElementById("videoUrl").value.trim();
+            if (!url) return;
+
+            status.innerText = "Processing video... please wait ⏳";
+
+            const res = await fetch("http://127.0.0.1:8000/process_video", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ url })
+            });
+
+            const data = await res.json();
+
+            if (data.video_id) {
+                window.location.href = `/chat?v=${data.video_id}`;
+            } else {
+                status.innerText = "Failed to process video.";
+            }
+        };
+    </script>
+
+</body>
+
+</html>
